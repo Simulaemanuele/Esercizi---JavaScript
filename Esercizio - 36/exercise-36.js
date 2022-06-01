@@ -5,7 +5,7 @@ class Person {
   }
 
   static fromObject(obj) {
-    return Object.assign(obj);
+    return new this(obj.firstName, obj.lastName);
   }
 }
 
@@ -17,4 +17,5 @@ const obj = {
 };
 
 const person = Person.fromObject(obj);
+console.log(person);
 console.log(`${person.firstName} ${person.lastName}`);
