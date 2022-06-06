@@ -1,13 +1,8 @@
 function uncompletedNotes(notes) {
-  const notesToDo = [];
 
-  for (let i = 0; i < notes.length; i++){
-    for(let j = 0; j < notes[i].todos.length; j++){
-      if(notes[i].todos[j].done === false){
-        notesToDo.push(JSON.parse(JSON.stringify(notes[i].todos[j])));
-      }
-    }
-  }
+   const notesToDo = notes.filter(function(fn){
+    return fn.todos.some(n => n.done === false);
+  });
 
   return notesToDo;
 }
