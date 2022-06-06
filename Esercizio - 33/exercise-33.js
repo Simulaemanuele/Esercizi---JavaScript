@@ -1,14 +1,9 @@
 function firstUncompletedNote(notes) {
-  const notesToDo = [];
+  const notesToDo = notes.find(function(fn){
+    return fn.todos.some(tasks => tasks.done === false);
+  });
 
-  for (let i = 0; i < notes.length; i++) {
-    for (let j = 0; j < notes[i].todos.length; j++) {
-      if (notes[i].todos[j].done === false) {
-        notesToDo[0] = JSON.parse(JSON.stringify(notes[i].todos[j]));
-        return notesToDo;
-      }
-    }
-  }
+  return notesToDo;
 }
 
 const notes = [
