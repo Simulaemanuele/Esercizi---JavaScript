@@ -1,0 +1,42 @@
+<html>
+  <body>
+    <div id="container">
+      <form>
+        <div>
+          <label>First Name:</label>
+          <input type="text" class="form-input" id="firstName" value="Mario"/>
+        </div>
+        <div>
+          <label>Last Name:</label>
+          <input type="text" class="form-input" id="lastName" value="Rossi"/>
+        </div>
+        <div>
+          <label>Age:</label>
+          <input type="number" class="form-input" id="age" value="25"/>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
+
+<script>
+  // code here
+  const name = document.getElementById('firstName').getAttribute('value');
+  const surname = document.getElementById('lastName').getAttribute('value');
+  const oldYears = document.getElementById('age').getAttribute('value');
+
+  class Person {
+    constructor(name,surname,oldYears){
+      this.name = name;
+      this.surname = surname;
+      this.oldYears = oldYears;
+    }
+  }
+
+  const newObjPerson = new Person(name,surname,oldYears);
+  const personJson = JSON.stringify(newObjPerson);
+  const formElement = document.getElementById('container').childNodes[1];
+  formElement.setAttribute('data-person', personJson);
+
+  console.log(formElement);
+</script>
