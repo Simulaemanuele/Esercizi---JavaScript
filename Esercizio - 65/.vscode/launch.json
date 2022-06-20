@@ -1,0 +1,14 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "pwa-chrome",
+            "request": "launch",
+            "name": "Open exercise-65.html",
+            "file": "c:\\Users\\Ema\\Desktop\\Develhope\\Esercizi - Javascript\\Esercizio - 65\\exercise-65.html"
+        }
+    ]
+}

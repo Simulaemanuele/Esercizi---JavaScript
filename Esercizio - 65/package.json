@@ -1,0 +1,14 @@
+{
+  "name": "esercizio---65",
+  "version": "1.0.0",
+  "description": "Implementare il codice necessario per: * Recuperare il post presente all'interno del LocalStorage (salvato tramite l'esercizio precedente) * Visualizzare all'interno dell'elemento `#post-title` il titolo del post recuperato dal LocalStorage",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^3.2.6"
+  }
+}

@@ -1,0 +1,29 @@
+<html>
+  <body>
+    <div id="container">
+      
+      <button type="button" id="fetch-post-local">
+        Fetch Post from LocalStorage
+      </button>
+
+      <h2>Post: <span id="post-title"></span></h2>
+    </div>
+  </body>
+</html>
+
+<script>
+  // code here
+
+  const fetchPost = document.getElementById('fetch-post');
+  const savePost = document.getElementById('save-post');
+  const fetchPostLocal = document.getElementById('fetch-post-local');
+
+  const myLocalFetchMethod = async () => {
+    const itemLocalStored = localStorage.getItem('Post');
+    console.log(itemLocalStored);
+    const objectPost = await JSON.parse(itemLocalStored);
+    document.getElementById('post-title').innerHTML = objectPost.title;
+  }
+
+  fetchPostLocal.addEventListener('click', myLocalFetchMethod);
+</script>
