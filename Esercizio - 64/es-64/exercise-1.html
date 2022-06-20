@@ -11,22 +11,23 @@
 
 <script>
   // code here
-  const fetchPost = document.getElementById('fetch-post');
-  const savePost = document.getElementById('save-post');
+  
+  const fetchPost = document.getElementById("fetch-post");
+  const savePost = document.getElementById("save-post");
 
-  const myFetchMethod = async () => {
-    const promisedFetch = await fetch('https://jsonplaceholder.typicode.com/posts/1');
-    const objFetch = await promisedFetch.json();
-    console.log('Fetch element succeeded');
-    return objFetch;
+  fetchPost.addEventListener("click", myFetchMethod)
+
+  async function myFetchMethod() {
+    let promisedObj = await fetch('https://jsonplaceholder.typicode.com/posts/1')
+    let objFetched = await promisedObj.json()
+    return objFetched;
   }
 
-  fetchPost.addEventListener('click', myFetchMethod);
+  savePost.addEventListener("click", savePostFunction)
 
-  const mySaveMethod = async () => {
-    const saving = JSON.stringify(await myFetchMethod);
-    localStorage.setItem('Post', saving);
-    console.log('Element saved with success');
+
+  async function mySaveMethod() {
+    const toSaveItem = JSON.stringify(await myFetchMethod())
+    localStorage.setItem("Post", toSaveItem)
   }
-  savePost.addEventListener('click', mySaveMethod);
 </script>
